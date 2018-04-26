@@ -1,0 +1,17 @@
+#hour-glass {
+    animation: hourglass-spin infinite 20s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@keyframes hourglass-spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+#main-box {
+    text-align: center;
+}
+#display-board {
+    font-size:7rem;
+}
+.button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
