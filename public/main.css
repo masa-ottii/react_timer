@@ -11,6 +11,11 @@
 #display-board {
     font-size:7rem;
 }
+.vertical-center {
+    display: inline-flex;
+    align-items: center;
+}
+
 .button {
     margin-left: 5px;
     margin-right: 5px;
