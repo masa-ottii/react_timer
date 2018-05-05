@@ -6,8 +6,7 @@ export default class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            remaintime: 0,
-            endtime: 0
+            remaintime: 0
         };
     }
     componentDidMount(){
@@ -19,8 +18,7 @@ export default class App extends React.Component {
     
     setRemainTime(time){
         this.setState({
-            remaintime: 60 * time,
-            endtime: Date.now() + (1000 * 60 * time)
+            remaintime: 60 * time
          });
     }
 
@@ -40,7 +38,11 @@ export default class App extends React.Component {
     }
     
     tick(){
-        this.setState({remaintime: Math.round((this.state.endtime - Date.now())/1000) });
+        if(this.state.remaintime > 0){
+            this.setState({remaintime: this.state.remaintime - 1 });
+        } else {
+            clearInterval(this.timerId);            
+        }
     }
 
     format2(value){
